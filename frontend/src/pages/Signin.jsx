@@ -31,7 +31,7 @@ const Signin = () => {
                     <label>ID :</label>
                     <input type="text" onChange={(e) => { setId(e.target.value) }}/><br />
                     <label>PW :</label>
-                    <input type="text" onChange={(e) => { setPw(e.target.value) }}/><br />
+                    <input type='password' onChange={(e) => { setPw(e.target.value) }}/><br />
                     <label>User :</label>
                     <input type="text" onChange={(e) => { setUsername(e.target.value) }}/>
                     <input type="submit"/>
