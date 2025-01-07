@@ -48,7 +48,7 @@ router.post('/getLoginData', (req, res) => {
     let { id, pw } = req.body
 
     // SQL 쿼리 생성
-    let sql = `SELECT ID FROM LINK_MEMBER WHERE ID = ? and PW = ?`;
+    let sql = `SELECT ID, USER_NAME FROM LINK_MEMBER WHERE ID = ? and PW = ?`;
 
     // 데이터베이스에 값 삽입
     conn.query(sql, [id, pw], (err, rows) => {
@@ -57,11 +57,45 @@ router.post('/getLoginData', (req, res) => {
             return;
         }
         console.log('insert 완료', rows);
+        const username = rows[0].USER_NAME
 
         if (rows.length > 0) {
             res.json({
                 result: 'success',
-                id: id
+                username: username
+            })
+        } else {
+            res.json({
+                result: 'fail'
+            })
+        }
+    });
+})
+
+// 아이디 찾기 라우터
+router.post('/getSearchId', (req, res) => {
+    console.log('getdata router', req.body);
+
+    let { username } = req.body
+
+    // SQL 쿼리 생성
+    let sql = `SELECT ID, USER_NAME FROM LINK_MEMBER WHERE USER_NAME = ?`;
+
+    // 데이터베이스에 값 삽입
+    conn.query(sql, [username], (err, rows) => {
+        if (err) {
+            console.error('데이터베이스 오류:', err);
+            return;
+        }
+        console.log('insert 완료', rows);
+        const id = rows[0].ID
+        const username = rows[0].USER_NAME
+
+        if (rows.length > 0) {
+            res.json({
+                result: 'success',
+                id: id,
+                username: username
             })
         } else {
             res.json({

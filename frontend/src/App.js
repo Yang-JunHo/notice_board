@@ -1,8 +1,9 @@
 import './App.css';
+import { Route, Routes } from 'react-router-dom'
 import Login from './pages/Login';
 import Signin from './pages/Signin';
 import Home from './pages/Home'
-import { Route, Routes } from 'react-router-dom'
+import SearchId from './pages/SearchId';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signin' element={<Signin />}></Route>
+        <Route path='/searchid' element={<SearchId />}></Route>
       </Routes>
     </div>
   );
