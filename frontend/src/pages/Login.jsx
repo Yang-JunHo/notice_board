@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, NavLink } from 'react-router-dom'
 import instance from '../axios'
+import '../css/Login.css'
 
 const Login = () => {
 
@@ -33,18 +34,25 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <div>
-        <form onSubmit={handleLogin}>
-          <label>ID :</label>
-          <input type='text' onChange={e => setId(e.target.value)} />
-          <br />
-          <label>PW :</label>
-          <input type='password' onChange={e => setPw(e.target.value)} />
-          <input type='submit' value="로그인" />
-        </form>
-      </div>
-    </div>
+      <form onSubmit={handleLogin} className='loginForm' >
+        <div>
+          <h1 id='login_title'>로그인</h1>
+        </div>
+        <div>
+          <div className='input'>
+            <input type='text' className='userId' id='userId' placeholder="아이디" autoFocus onChange={e => setId(e.target.value)} />
+            <input type='password' className='password' id='password' placeholder='비밀번호' onChange={e => setPw(e.target.value)} />
+            <button id='loginBut' type='submit'>Login</button>
+          </div>
+        </div>
+        <div className="link">
+          <NavLink to="/SearchId">아이디 찾기</NavLink>
+          <span>&nbsp;|&nbsp;</span>
+          <NavLink to="/findPw">비밀번호 찾기</NavLink>
+          <span>&nbsp;|&nbsp;</span>
+          <NavLink to="/signin">회원가입</NavLink>
+        </div>
+      </form>
   )
 }
 
