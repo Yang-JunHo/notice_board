@@ -3,8 +3,7 @@
     font-family: 'Pretendard-Regular';
 }
 
-div h5 {
-    margin-bottom: 3px;
+div h1 {
     color: rgb(107, 107, 107);
 }
 
@@ -21,7 +20,7 @@ div h5 {
     justify-content: center;
     align-items: center;
     position: absolute;
-    border: 5px solid rgb(163, 156, 231);
+    border: 5px solid rgb(51, 119, 255);
     border-radius: 7%;
     margin-left: 32.5%;
     margin-right: 32.5%;
@@ -31,7 +30,7 @@ div h5 {
 }
 
 h1#login_title {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     /* 로그인 글자와 아래 요소 간격 */
 }
 
@@ -45,14 +44,14 @@ h1#login_title {
 .password {
     width: 90%;
     height: 40px;
-    border: 1px solid rgb(163, 156, 231);
+    border: 1px solid rgb(51, 119, 255);
     border-radius: 5px;
     padding: 0 10px;
     margin-bottom: 10px;
 }
 
 #loginBut {
-    background-color: rgb(163, 156, 231);
+    background-color: rgb(51, 119, 255);
     color: white;
     border: none;
     border-radius: 5px;
