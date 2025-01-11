@@ -20,15 +20,6 @@ const Header = () => {
                         <Nav.Link href="/login">Login</Nav.Link>
                         <Nav.Link href="/signin">Signin</Nav.Link>
                     </Nav>
-                    {/* <Form className="d-flex">
-                        <Form.Control
-                            type="search"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search"
-                        />
-                        <Button variant="outline-success">Search</Button>
-                    </Form> */}
                     <Form>
                         <input placeholder='Search'></input>
                         <Button type='submit'>Search</Button>
